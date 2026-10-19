@@ -117,6 +117,10 @@ Los cambios tardan **~40 segundos** en verse (Netlify reconstruye el sitio).
   interpreta como «sin valor» antes de validar (`pruneEmpty` en `src/content.config.ts`).
 - **Rama:** `main`. Si preferís revisar los cambios antes de publicar, descomentá
   `publish_mode: editorial_workflow` en `public/admin/config.yml`.
+- **Ruta del config:** `public/admin/index.html` declara
+  `<link href="/admin/config.yml" rel="cms-config-url">`. Es a propósito: así el panel
+  encuentra el config aunque entres a `/admin` **sin** la barra final (si usara la ruta
+  relativa, la buscaría en `/config.yml` y daría «Failed to load config.yml (404)»).
 
 ### Qué NO hace el CMS
 

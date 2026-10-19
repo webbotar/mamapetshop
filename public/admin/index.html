@@ -6,6 +6,12 @@
     <meta name="robots" content="noindex, nofollow" />
     <title>Panel · Mana Pet Shop</title>
     <link rel="icon" href="/images/logo-mana-pet-shop.svg" />
+    <!--
+      Ruta ABSOLUTA del config. Sin esto, el panel resuelve "config.yml" de forma
+      relativa a la URL: entrando a /admin (sin la barra final) la buscaba en
+      /config.yml y daba "Failed to load config.yml (404)".
+    -->
+    <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
     <style>
       /* Evita el parpadeo blanco mientras carga el panel. */
       html,
