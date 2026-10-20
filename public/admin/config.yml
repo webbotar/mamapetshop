@@ -11,7 +11,11 @@
 # ============================================================================
 
 backend:
-  name: git-gateway
+  # Login con la cuenta de GitHub (vía el proveedor OAuth de Netlify).
+  # Requiere que cada editor tenga una cuenta de GitHub con permiso de escritura
+  # sobre el repositorio. NO usa Netlify Identity ni Git Gateway (deprecado).
+  name: github
+  repo: webbotar/mamapetshop
   branch: main
 
 # Publish mode: "simple" guarda y publica directo. "editorial_workflow" crea
