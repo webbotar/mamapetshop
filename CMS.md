@@ -59,14 +59,20 @@ git push -u origin main
 
 ### Paso 3 — Activar el acceso al panel
 
+El panel usa el backend **github** de Decap: se inicia sesión con una cuenta de GitHub y cada editor debe tener permiso de **escritura** sobre el repositorio. No usa Netlify Identity ni Git Gateway, así que no hay upgrade ni invitaciones pagas.
+
 En el sitio de Netlify:
 
-1. **Site configuration → Identity** → *Enable Identity*.
-2. En **Identity → Registration**, elegí **Invite only** (así solo entra quien vos invitás).
-3. En **Identity → Services → Git Gateway** → *Enable Git Gateway*.
-4. En **Identity → Invite users**, invitá tu email (y el de quien vaya a cargar productos).
+1. **Project configuration → OAuth → Install provider → GitHub**
+   - Netlify te pide crear una OAuth App en GitHub (https://github.com/settings/developers → New OAuth App).
+   - La **Authorization callback URL** te la da Netlify en ese mismo paso.
+   - Copiás el **Client ID** y **Client Secret** de GitHub a Netlify y guardás.
+   (Esto habilita el botón “Continue with GitHub” en el panel.)
 
-Te llega un mail, entrás a `/admin`, definís tu contraseña y listo.
+2. En GitHub, entrá al repo **webbotar/mamapetshop** → **Settings → Collaborators → Add people** y agregá a quien vaya a cargar productos, con rol **Write** (o Maintain).
+   - Sin este paso, el panel te deja entrar pero no puede guardar cambios.
+
+3. Probá: **https://mamapetshop.netlify.app/admin/** → *Continue with GitHub* → elegí tu cuenta → se abre el panel.
 
 ### Paso 4 — Imágenes (opcional pero recomendado)
 
